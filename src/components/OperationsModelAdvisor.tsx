@@ -389,14 +389,14 @@ const OperationsModelAdvisor = () => {
     }
     
     if (companySize === 'enterprise') {
+      // PRIORITY: Very large enterprises (200+ designers) with centralized ops get centralized-operations
+      if (teamSizeNumber >= 200 && existingOpsStructure === 'centralized') {
+        return 'centralized-operations';
+      }
+      
       // Very large enterprises with multiple business units get distributed-enterprise
       if (organizationComplexity === 'complex-ecosystem' || organizationComplexity === 'multiple-business-units') {
         return 'distributed-enterprise';
-      }
-      
-      // SPECIAL CASE: Very large enterprises (200+ designers) with centralized ops get centralized-operations
-      if (teamSizeNumber >= 200 && existingOpsStructure === 'centralized') {
-        return 'centralized-operations';
       }
       
       // Large enterprises with existing central coordination get distributed-with-central
