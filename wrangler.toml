@@ -1,0 +1,24 @@
+name = "ops-model"
+main = "src/worker.js"
+compatibility_date = "2024-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "ops-model-advisor"
+
+[env.preview]
+name = "ops-model-advisor-preview"
+
+# Assets configuration for serving static files
+[assets]
+directory = "dist"
+binding = "ASSETS"
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
+
+# Custom domains (can be configured later)
+# [[routes]]
+# pattern = "your-custom-domain.com/*"
+# zone_name = "your-custom-domain.com"
