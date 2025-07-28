@@ -261,46 +261,53 @@ const OperationsModelAdvisor = () => {
     'distributed': {
       name: 'Distributed Specialist Model',
       structure: [
-        { id: 'cpo', title: 'CPO', level: 1, x: 150, y: 100, type: 'leadership' },
-        { id: 'head-design', title: 'Head of Design', level: 1, x: 350, y: 100, type: 'design-leadership' },
-        { id: 'head-research', title: 'Head of Research', level: 1, x: 550, y: 100, type: 'leadership' },
-        { id: 'cto', title: 'CTO', level: 1, x: 750, y: 100, type: 'leadership' },
-        { id: 'product-ops', title: 'Product Operations', level: 2, x: 150, y: 200, type: 'ops-function', responsibilities: ['Product analytics', 'Market research', 'Roadmap support', 'Reports to CPO'] },
-        { id: 'design-ops', title: 'Design Operations', level: 2, x: 350, y: 200, type: 'ops-function', responsibilities: ['Design systems', 'Design processes', 'Reports to Head of Design'] },
-        { id: 'research-ops', title: 'Research Operations', level: 2, x: 550, y: 200, type: 'ops-function', responsibilities: ['Research infrastructure', 'Methodology', 'Reports to Head of Research'] },
-        { id: 'eng-ops', title: 'Engineering Operations', level: 2, x: 750, y: 200, type: 'ops-function', responsibilities: ['Developer tooling', 'CI/CD', 'Reports to CTO'] }
+        { id: 'cpo', title: 'CPO', level: 1, x: 100, y: 100, type: 'leadership' },
+        { id: 'head-design', title: 'Head of Design', level: 1, x: 250, y: 100, type: 'design-leadership' },
+        { id: 'head-research', title: 'Head of Research', level: 1, x: 400, y: 100, type: 'leadership' },
+        { id: 'head-content', title: 'Head of Content', level: 1, x: 550, y: 100, type: 'leadership' },
+        { id: 'cto', title: 'CTO', level: 1, x: 700, y: 100, type: 'leadership' },
+        { id: 'product-ops', title: 'Product Operations', level: 2, x: 100, y: 200, type: 'ops-function', responsibilities: ['Product analytics', 'Market research', 'Roadmap support', 'Reports to CPO'] },
+        { id: 'design-ops', title: 'Design Operations', level: 2, x: 250, y: 200, type: 'ops-function', responsibilities: ['Design systems', 'Design processes', 'Reports to Head of Design'] },
+        { id: 'research-ops', title: 'Research Operations', level: 2, x: 400, y: 200, type: 'ops-function', responsibilities: ['Research infrastructure', 'Methodology', 'Reports to Head of Research'] },
+        { id: 'content-ops', title: 'Content Operations', level: 2, x: 550, y: 200, type: 'ops-function', responsibilities: ['Content strategy', 'Editorial processes', 'Content governance', 'Reports to Head of Content'] },
+        { id: 'eng-ops', title: 'Engineering Operations', level: 2, x: 700, y: 200, type: 'ops-function', responsibilities: ['Developer tooling', 'CI/CD', 'Reports to CTO'] }
       ],
       connections: [
         { from: 'cpo', to: 'product-ops' },
         { from: 'head-design', to: 'design-ops' },
         { from: 'head-research', to: 'research-ops' },
+        { from: 'head-content', to: 'content-ops' },
         { from: 'cto', to: 'eng-ops' }
       ]
     },
     'distributed-with-central': {
       name: 'Distributed with Central Coordination',
       structure: [
-        { id: 'coo', title: 'COO / Head of Operations', level: 0, x: 450, y: 50, type: 'leadership' },
-        { id: 'central-ops', title: 'Central Ops Standards', level: 1, x: 450, y: 130, type: 'ops-leadership', responsibilities: ['Cross-functional standards', 'Tool governance', 'Best practice sharing', 'Ops strategy coordination'] },
-        { id: 'cpo', title: 'CPO', level: 1, x: 150, y: 200, type: 'leadership' },
-        { id: 'head-design', title: 'Head of Design', level: 1, x: 350, y: 200, type: 'design-leadership' },
+        { id: 'ceo', title: 'CEO / Executive Team', level: 0, x: 450, y: 50, type: 'leadership' },
+        { id: 'central-ops', title: 'Central Ops Standards', level: 1.5, x: 80, y: 250, type: 'ops-leadership', responsibilities: ['Cross-functional standards', 'Tool governance', 'Best practice sharing', 'Ops strategy coordination'] },
+        { id: 'cpo', title: 'CPO', level: 1, x: 250, y: 200, type: 'leadership' },
+        { id: 'head-design', title: 'Head of Design', level: 1, x: 400, y: 200, type: 'design-leadership' },
         { id: 'head-research', title: 'Head of Research', level: 1, x: 550, y: 200, type: 'leadership' },
-        { id: 'cto', title: 'CTO', level: 1, x: 750, y: 200, type: 'leadership' },
-        { id: 'product-ops', title: 'Product Operations', level: 2, x: 150, y: 300, type: 'ops-function', responsibilities: ['Product analytics', 'Reports to CPO', 'Coordinates with Central Standards'] },
-        { id: 'design-ops', title: 'Design Operations', level: 2, x: 350, y: 300, type: 'ops-function', responsibilities: ['Design systems', 'Reports to Head of Design', 'Coordinates with Central Standards'] },
+        { id: 'cto', title: 'CTO', level: 1, x: 700, y: 200, type: 'leadership' },
+        { id: 'product-ops', title: 'Product Operations', level: 2, x: 250, y: 300, type: 'ops-function', responsibilities: ['Product analytics', 'Reports to CPO', 'Coordinates with Central Standards'] },
+        { id: 'design-ops', title: 'Design Operations', level: 2, x: 400, y: 300, type: 'ops-function', responsibilities: ['Design systems', 'Reports to Head of Design', 'Coordinates with Central Standards'] },
         { id: 'research-ops', title: 'Research Operations', level: 2, x: 550, y: 300, type: 'ops-function', responsibilities: ['Research infrastructure', 'Reports to Head of Research', 'Coordinates with Central Standards'] },
-        { id: 'eng-ops', title: 'Engineering Operations', level: 2, x: 750, y: 300, type: 'ops-function', responsibilities: ['Developer tooling', 'Reports to CTO', 'Coordinates with Central Standards'] }
+        { id: 'eng-ops', title: 'Engineering Operations', level: 2, x: 700, y: 300, type: 'ops-function', responsibilities: ['Developer tooling', 'Reports to CTO', 'Coordinates with Central Standards'] }
       ],
       connections: [
-        { from: 'coo', to: 'central-ops' },
-        { from: 'central-ops', to: 'cpo' },
-        { from: 'central-ops', to: 'head-design' },
-        { from: 'central-ops', to: 'head-research' },
-        { from: 'central-ops', to: 'cto' },
+        { from: 'ceo', to: 'central-ops' },
+        { from: 'ceo', to: 'cpo' },
+        { from: 'ceo', to: 'head-design' },
+        { from: 'ceo', to: 'head-research' },
+        { from: 'ceo', to: 'cto' },
         { from: 'cpo', to: 'product-ops' },
         { from: 'head-design', to: 'design-ops' },
         { from: 'head-research', to: 'research-ops' },
-        { from: 'cto', to: 'eng-ops' }
+        { from: 'cto', to: 'eng-ops' },
+        { from: 'central-ops', to: 'cpo', type: 'dotted' },
+        { from: 'central-ops', to: 'head-design', type: 'dotted' },
+        { from: 'central-ops', to: 'head-research', type: 'dotted' },
+        { from: 'central-ops', to: 'cto', type: 'dotted' }
       ]
     },
     'distributed-enterprise': {
@@ -327,22 +334,22 @@ const OperationsModelAdvisor = () => {
       name: 'Centralized Operations',
       structure: [
         { id: 'ceo', title: 'CEO / Executive Team', level: 0, x: 400, y: 40, type: 'leadership' },
-        { id: 'coo', title: 'COO / Head of Operations', level: 1, x: 400, y: 120, type: 'leadership' },
-        { id: 'ops-squad-1', title: 'Ops Squad A', level: 2, x: 200, y: 200, type: 'ops-leadership', responsibilities: ['Product + Design + Research + Content + People + IT Ops', 'Supports Business Unit A', 'Balanced cross-functional support'] },
-        { id: 'ops-squad-2', title: 'Ops Squad B', level: 2, x: 400, y: 200, type: 'ops-leadership', responsibilities: ['Product + Design + Research + Content + People + IT Ops', 'Supports Business Unit B', 'Balanced cross-functional support'] },
-        { id: 'ops-squad-3', title: 'Ops Squad C', level: 2, x: 600, y: 200, type: 'ops-leadership', responsibilities: ['Product + Design + Research + Content + People + IT Ops', 'Supports Business Unit C', 'Balanced cross-functional support'] },
-        { id: 'bu1', title: 'Business Unit A', level: 3, x: 200, y: 280, type: 'business-unit', responsibilities: ['Receives comprehensive ops support', 'Focus on business objectives', 'Streamlined operations'] },
-        { id: 'bu2', title: 'Business Unit B', level: 3, x: 400, y: 280, type: 'business-unit', responsibilities: ['Receives comprehensive ops support', 'Focus on business objectives', 'Streamlined operations'] },
-        { id: 'bu3', title: 'Business Unit C', level: 3, x: 600, y: 280, type: 'business-unit', responsibilities: ['Receives comprehensive ops support', 'Focus on business objectives', 'Streamlined operations'] }
+        { id: 'coo', title: 'COO / Head of Operations', level: 1, x: 80, y: 150, type: 'leadership' },
+        { id: 'bu1', title: 'Business Unit A', level: 1, x: 250, y: 150, type: 'business-unit', responsibilities: ['Receives comprehensive ops support', 'Focus on business objectives', 'Streamlined operations'] },
+        { id: 'bu2', title: 'Business Unit B', level: 1, x: 400, y: 150, type: 'business-unit', responsibilities: ['Receives comprehensive ops support', 'Focus on business objectives', 'Streamlined operations'] },
+        { id: 'bu3', title: 'Business Unit C', level: 1, x: 550, y: 150, type: 'business-unit', responsibilities: ['Receives comprehensive ops support', 'Focus on business objectives', 'Streamlined operations'] },
+        { id: 'ops-squad-1', title: 'Ops Squad A', level: 2, x: 200, y: 250, type: 'ops-leadership', responsibilities: ['Product + Design + Research + Content + People + IT Ops', 'Reports to COO', 'Supports Business Unit A', 'Balanced cross-functional support'] },
+        { id: 'ops-squad-2', title: 'Ops Squad B', level: 2, x: 400, y: 250, type: 'ops-leadership', responsibilities: ['Product + Design + Research + Content + People + IT Ops', 'Reports to COO', 'Supports Business Unit B', 'Balanced cross-functional support'] },
+        { id: 'ops-squad-3', title: 'Ops Squad C', level: 2, x: 600, y: 250, type: 'ops-leadership', responsibilities: ['Product + Design + Research + Content + People + IT Ops', 'Reports to COO', 'Supports Business Unit C', 'Balanced cross-functional support'] }
       ],
       connections: [
         { from: 'ceo', to: 'coo' },
-        { from: 'coo', to: 'ops-squad-1' },
-        { from: 'coo', to: 'ops-squad-2' },
-        { from: 'coo', to: 'ops-squad-3' },
-        { from: 'ops-squad-1', to: 'bu1' },
-        { from: 'ops-squad-2', to: 'bu2' },
-        { from: 'ops-squad-3', to: 'bu3' }
+        { from: 'ops-squad-1', to: 'coo' },
+        { from: 'ops-squad-2', to: 'coo' },
+        { from: 'ops-squad-3', to: 'coo' },
+        { from: 'ops-squad-1', to: 'bu1', type: 'dotted' },
+        { from: 'ops-squad-2', to: 'bu2', type: 'dotted' },
+        { from: 'ops-squad-3', to: 'bu3', type: 'dotted' }
       ]
     }
   };
@@ -503,6 +510,7 @@ const OperationsModelAdvisor = () => {
                   y2={toNode.y}
                   stroke="#D1D5DB"
                   strokeWidth="2"
+                  strokeDasharray={(connection as any).type === 'dotted' ? '5,5' : 'none'}
                   className="transition-all duration-200"
                 />
               );
