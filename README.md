@@ -1,4 +1,4 @@
-# DesignOps Model Advisor
+# DesignOps Model Explorer
 
 A comprehensive React-based tool for recommending optimal DesignOps organizational models based on company size, design team structure, and operational complexity. Built with real industry benchmarking data from 333+ DesignOps professionals.
 

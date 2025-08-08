@@ -1,5 +1,5 @@
 /**
- * Cloudflare Worker for serving DesignOps Model Advisor React SPA
+ * Cloudflare Worker for serving DesignOps Model Explorer React SPA
  * Handles static asset serving and SPA routing
  */
 
@@ -59,14 +59,14 @@ export default {
         <!DOCTYPE html>
         <html>
         <head>
-          <title>DesignOps Model Advisor - Error</title>
+          <title>DesignOps Model Explorer - Error</title>
           <style>
             body { font-family: system-ui, sans-serif; text-align: center; padding: 50px; }
             .error { color: #dc2626; }
           </style>
         </head>
         <body>
-          <h1>DesignOps Model Advisor</h1>
+          <h1>DesignOps Model Explorer</h1>
           <p class="error">Sorry, there was an error loading the application.</p>
           <p>Please try refreshing the page.</p>
         </body>
